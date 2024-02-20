@@ -89,7 +89,13 @@ function buildTOC(options) {
     let lastLI = null;
 
     // 使用者需要在目錄上顯示哪些層級的標題
-    const selector = ".markdown-section " + options.headings;
+    let selector = "";
+
+    // 只需要 .markdown-section 的直系標題元素
+    getDisplayedHeadingLevels(options).forEach((level) => {
+        selector += ".markdown-section>h" + level + ", ";
+    });
+    selector = selector.slice(0, selector.length - 2);
 
     // 獲取建立目錄所需的所有標題
     const headings = getHeadings(selector);
@@ -133,6 +139,14 @@ function buildTOC(options) {
     // 將目錄容器新增至頁面上
     const nav = document.querySelector("section.content aside.nav");
     nav.appendChild(container);
+}
+
+/**
+ * @param {*} options 此 plugin 的配置。
+ * @returns {Array<string>} 回傳所有需要在目錄中顯示的標題層級
+ */
+function getDisplayedHeadingLevels(options) {
+    return options.headings.match(/\d/g);
 }
 
 /**
@@ -263,12 +277,9 @@ function highlightTOC(options) {
 
     // 監聽視窗的滾動事件
     window.addEventListener("scroll", (event) => {
-        // 從使用者的配置中獲取所有需要在目錄中顯示的標題層級
-        const levels = options.headings.match(/\d/g);
-
         // 對各個層級去 highlight 目錄標題
-        levels.forEach((level) => {
-            const headings = document.querySelectorAll(".markdown-section h" + level);
+        getDisplayedHeadingLevels(options).forEach((level) => {
+            const headings = document.querySelectorAll(".markdown-section>h" + level);
 
             // 該層級的每個標題
             headings.forEach((heading) => {
