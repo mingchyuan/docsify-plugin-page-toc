@@ -11,6 +11,20 @@ A docsify plugin to display ToC for each page.
 - Avoid using multiple `<h1>` elements on one page.<br />
   A page should generally have a single `<h1>` element that describes the content of the page.
 
+### Stylesheet
+
+```html
+<!-- head -->
+<link rel="stylesheet" href="https://unpkg.com/@mingchyuanko/docsify-plugin-page-toc@1.0.0/dist/toc.css">
+```
+
+### Script
+
+```html
+<!-- body -->
+<script src="https://unpkg.com/@mingchyuanko/docsify-plugin-page-toc@1.0.0/dist/toc.js"></script>
+```
+
 ### Configure docsify-plugin-page-toc
 
 ```html
