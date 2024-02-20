@@ -2,6 +2,8 @@
 
 A docsify plugin to display ToC for each page.
 
+![NPM Version](https://img.shields.io/npm/v/@mingchyuanko/docsify-plugin-page-toc)
+
 ## Usage notes
 
 ### Markdown file
