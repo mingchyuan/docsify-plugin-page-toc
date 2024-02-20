@@ -2,7 +2,7 @@
 
 A docsify plugin to display ToC for each page.
 
-![NPM Version](https://img.shields.io/npm/v/@mingchyuanko/docsify-plugin-page-toc)
+[![NPM Version](https://img.shields.io/npm/v/%40mingchyuanko%2Fdocsify-plugin-page-toc?style=flat-square)](https://www.npmjs.com/package/@mingchyuanko/docsify-plugin-page-toc)
 
 ## Usage notes
 
