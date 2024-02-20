@@ -89,7 +89,7 @@ function buildTOC(options) {
     let lastLI = null;
 
     // 使用者需要在目錄上顯示哪些層級的標題
-    const selector = ".markdown-section " + options.headings
+    const selector = ".markdown-section " + options.headings;
 
     // 獲取建立目錄所需的所有標題
     const headings = getHeadings(selector);
