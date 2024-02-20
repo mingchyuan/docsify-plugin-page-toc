@@ -15,14 +15,14 @@ A docsify plugin to display ToC for each page.
 
 ```html
 <!-- head -->
-<link rel="stylesheet" href="https://unpkg.com/@mingchyuanko/docsify-plugin-page-toc@1.1.0/dist/toc.css">
+<link rel="stylesheet" href="https://unpkg.com/@mingchyuanko/docsify-plugin-page-toc/dist/toc.css">
 ```
 
 ### Script
 
 ```html
 <!-- body -->
-<script src="https://unpkg.com/@mingchyuanko/docsify-plugin-page-toc@1.1.0/dist/toc.min.js"></script>
+<script src="https://unpkg.com/@mingchyuanko/docsify-plugin-page-toc/dist/toc.min.js"></script>
 ```
 
 ### Configure docsify-plugin-page-toc
