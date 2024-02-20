@@ -1,0 +1,23 @@
+{
+  "name": "@mingchyuanko/docsify-plugin-page-toc",
+  "version": "1.0.0",
+  "description": "A docsify plugin to display ToC for each page",
+  "main": "toc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "docsify",
+    "table of content"
+  ],
+  "author": "Ming-Chyuan Ko",
+  "license": "MIT",
+  "homepage": "https://github.com/mingchyuan/docsify-plugin-page-toc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingchyuan/docsify-plugin-page-toc.git"
+  },
+  "files": [
+    "dist"
+  ]
+}
