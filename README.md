@@ -20,6 +20,16 @@ A docsify plugin to display ToC for each page.
 <link rel="stylesheet" href="https://unpkg.com/@mingchyuanko/docsify-plugin-page-toc/dist/toc.css">
 ```
 
+The browser's width must be wider than 1200px.
+
+Otherwise, you need to download the CSS file and remove the following code:
+
+```css
+@media screen and (max-width: 1200px) {
+    /* … */
+}
+```
+
 ### Script
 
 ```html
