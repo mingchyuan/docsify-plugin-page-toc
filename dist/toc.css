@@ -1,12 +1,17 @@
 :root {
+    --content-padding-top: 60px;
+    --markdown-section-padding-bottom: 48px;
+    --toc-title-line-height: 40px;
+    --toc-scrollbar-width: 5px;
+    --gap-between-toc-and-scrollbar: 3px;
     --list-indent: 20px;
-    --span-padding-left: 20px;
 }
 
+/* 調整目錄與文章內容的布局  */
 section.content {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-end;
+    padding-top: var(--content-padding-top);
 }
 
 aside.nav {
@@ -14,28 +19,40 @@ aside.nav {
     flex: none;
 }
 
-article.markdown-section {
-    width: 75%;
-    flex: none;
-}
-
 aside.nav,
 article.markdown-section {
-    padding: var(--docsifytabs-content-padding);
+    padding: 0px var(--docsifytabs-content-padding);
 }
 
+article.markdown-section {
+    width: 75%;
+    flex: 1;
+    max-width: 80%;
+    padding-bottom: var(--markdown-section-padding-bottom);
+}
+
+/* 目錄內部的樣式 */
 .toc-container {
     position: fixed;
     margin-right: 2%;
-    margin-top: 41px;
+    margin-top: var(--toc-title-line-height);
     width: -webkit-fill-available;
-    max-height: 80vh;
-    font-family: 'Segoe UI';
+    max-height: calc(100vh - var(--content-padding-top) - var(--markdown-section-padding-bottom) - var(--toc-title-line-height));
     overflow-y: auto;
+    font-family: 'Segoe UI';
+}
+
+.toc-container p.title {
+    position: fixed;
+    margin-top: calc(-1 * var(--toc-title-line-height));
+    font-weight: 500;
+    font-size: 18px;
+    line-height: var(--toc-title-line-height);
+    letter-spacing: 1.5px;
 }
 
 .toc-container::-webkit-scrollbar {
-    width: 5px;
+    width: var(--toc-scrollbar-width);
     display: none;
 }
 
@@ -56,17 +73,12 @@ article.markdown-section {
     background: gray;
 }
 
-.toc-container p.title {
-    position: fixed;
-    margin: -41px 0 0 0;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 36px;
-    letter-spacing: 1.5px;
+.toc-container>ul {
+    margin-right: calc(var(--toc-scrollbar-width) + var(--gap-between-toc-and-scrollbar));
 }
 
-.toc-container>ul {
-    padding-right: 6px;
+.toc-container:hover>ul {
+    margin-right: var(--gap-between-toc-and-scrollbar);
 }
 
 .toc-container ul {
@@ -96,27 +108,27 @@ article.markdown-section {
 }
 
 .toc-container>ul>li>a>span {
-    padding-left: calc(var(--list-indent) * 0 + var(--span-padding-left));
+    padding-left: calc(var(--list-indent) * 1);
 }
 
 .toc-container>ul>li>ul>li>a>span {
-    padding-left: calc(var(--list-indent) * 1 + var(--span-padding-left));
+    padding-left: calc(var(--list-indent) * 2);
 }
 
 .toc-container>ul>li>ul>li>ul>li>a>span {
-    padding-left: calc(var(--list-indent) * 2 + var(--span-padding-left));
+    padding-left: calc(var(--list-indent) * 3);
 }
 
 .toc-container>ul>li>ul>li>ul>li>ul>li>a>span {
-    padding-left: calc(var(--list-indent) * 3 + var(--span-padding-left));
+    padding-left: calc(var(--list-indent) * 4);
 }
 
 .toc-container>ul>li>ul>li>ul>li>ul>li>ul>li>a>span {
-    padding-left: calc(var(--list-indent) * 4 + var(--span-padding-left));
+    padding-left: calc(var(--list-indent) * 5);
 }
 
 .toc-container>ul>li>ul>li>ul>li>ul>li>ul>li>ul>li>a>span {
-    padding-left: calc(var(--list-indent) * 5 + var(--span-padding-left));
+    padding-left: calc(var(--list-indent) * 6);
 }
 
 .toc-container a:hover span {
