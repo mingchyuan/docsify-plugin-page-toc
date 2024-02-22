@@ -10,13 +10,13 @@
  *              └── article.markdown-section   // 文章
  */
 
-const defaultOptions = {
+const tocOptions = {
     title: 'Contents',
     headings: 'h2, h3',
-}
+};
 
 // 先設定為預設配置
-window.$docsify["toc"] = Object.assign(defaultOptions, window.$docsify["toc"]);
+window.$docsify["toc"] = Object.assign(tocOptions, window.$docsify["toc"]);
 
 // 新增此 plugin 至 docsify
 window.$docsify.plugins = [].concat(window.$docsify.plugins, plugin);
