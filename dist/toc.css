@@ -25,9 +25,9 @@ article.markdown-section {
 }
 
 article.markdown-section {
+    align-self: flex-start;
     width: 75%;
-    flex: 1;
-    max-width: 80%;
+    flex: none;
     padding-bottom: var(--markdown-section-padding-bottom);
 }
 
@@ -93,6 +93,7 @@ article.markdown-section {
 
 .toc-container a {
     display: block;
+    background: #fff;
     color: hsl(113, 0%, 60%);
     text-decoration: none;
     font-weight: 600;
@@ -145,7 +146,53 @@ article.markdown-section {
 }
 
 @media screen and (max-width: 1200px) {
+    /* 調整目錄與文章內容的布局  */
+    section.content {
+        display: flex;
+        flex-direction: column;
+        padding-top: var(--content-padding-top);
+    }
+    
     aside.nav {
-        display: none;
+        width: 80%;
+        flex: none;
+    }
+    
+    aside.nav,
+    article.markdown-section {
+        padding: 0px;
+        margin: 0 auto;
+    }
+    
+    article.markdown-section {
+        width: 80%;
+        flex: none;
+        padding-bottom: var(--markdown-section-padding-bottom);
+        padding-top: 30px;
+    }
+
+    /* 目錄內部的樣式 */
+    .toc-container {
+        position: relative;
+        margin: 0px;
+        max-height: 100%;
+    }
+    
+    .toc-container p.title {
+        position: relative;
+        margin: 0px;
+    }
+
+    .toc-container a.active {
+        background: #fff;
+    }
+
+    .toc-container a.active:hover span {
+        color: #42b983;
+    }
+    
+    .toc-container a.active span {
+        color: hsl(113, 0%, 60%);
+        border-color: #e8e8e8;
     }
 }
