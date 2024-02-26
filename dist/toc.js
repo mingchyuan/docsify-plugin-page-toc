@@ -372,7 +372,7 @@ function isContentViewed(articleHeading) {
         }
 
         nextSibling = nextSibling.nextElementSibling;
-    };
+    }
 
     return false;
 }
