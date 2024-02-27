@@ -391,6 +391,10 @@ function isHeading(element) {
 function syncTOCScrollToViewedContent() {
     const toc = document.querySelector(".toc-container");
 
+    if (!toc) {
+        return;
+    }
+
     // 監聽視窗的滾動事件
     window.addEventListener("scroll", (event) => {
         const windowScrollHeight = window.document.documentElement.scrollHeight;
